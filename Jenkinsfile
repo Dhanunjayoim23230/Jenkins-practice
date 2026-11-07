@@ -69,8 +69,8 @@ pipeline{
                 steps{
                     script{
                         sh """
-                    echo " hello this is deploy"
-                    """
+                            echo " hello this is deploy"
+                            """
                     }                   
                 }
             }
@@ -79,14 +79,19 @@ pipeline{
                         stage('STAGE-1') {
                             steps {
                                 script{
+                                    sh """
                                     echo "In Parallel STAGE - 1"
+                                    sleep 15
+                                    """
                                 }                                
                             }
                         }
                         stage('STAGE-2') {
                             steps {
                                 script{
+                                    sh """
                                     echo "In Parallel STAGE - 2"
+                                    """
                                 }                                 
                             }
                         }
