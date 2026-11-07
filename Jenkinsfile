@@ -25,7 +25,7 @@ pipeline{
                     sh """
                     echo "hello this is build"
                     echo " Project name is : $project"
-                    //sleep 30
+                    // sleep 30
                     echo "Hello ${params.PERSON}"
 
                     echo "Biography: ${params.BIOGRAPHY}"
