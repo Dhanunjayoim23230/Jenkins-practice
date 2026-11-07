@@ -18,7 +18,7 @@ systemctl start jenkins -y
 ```
 
 
-## sample pipeline code  DSL(Domain Specific Language)##
+## sample pipeline code  DSL(Domain Specific Language)
 ```
 pipeline{
     agent {label 'AGENT-1'}
