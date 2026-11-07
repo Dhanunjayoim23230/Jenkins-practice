@@ -4,6 +4,7 @@ pipeline{
         project = 'expense'
         component = 'backend'
         name = 'dhanunjaya reddy'
+        environment = 'QA'
     }
     options { 
         disableConcurrentBuilds() 
@@ -56,7 +57,8 @@ pipeline{
                         string(name: 'PERSON', defaultValue: 'Mr Dhanunjaya reddy', description: 'Who should I say hello to?')
                     }
                 } */
-                when { branch 'main' }
+                // when { branch 'main' }
+                when { environment name: 'DEPLOY_TO', value: '$environment' }.
                 steps{
                     sh """
                     echo " hello this is deploy"
