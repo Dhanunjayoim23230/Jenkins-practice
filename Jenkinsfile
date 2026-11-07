@@ -78,12 +78,16 @@ pipeline{
                     parallel {
                         stage('STAGE-1') {
                             steps {
-                                echo "In Parallel STAGE - 1"
+                                script{
+                                    echo "In Parallel STAGE - 1"
+                                }                                
                             }
                         }
                         stage('In Parallel 2') {
                             steps {
-                                echo "In Parallel STAGE - 2"
+                                script{
+                                    echo "In Parallel STAGE - 2"
+                                }                                 
                             }
                         }
                     }
