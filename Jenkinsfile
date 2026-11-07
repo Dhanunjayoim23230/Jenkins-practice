@@ -67,6 +67,27 @@ pipeline{
                 }
             }
         }
+        stage('Parallel stages') {
+                    parallel {
+                        stage('STAGE-1') {
+                            steps {
+                                sh """
+                                    echo " hello this is test"
+                                    sleep 15
+                                """
+                            }
+                        }
+                        stage('STAGE-2') {
+                            steps {
+                                sh """
+                                    echo " hello this is test"
+                                    sleep 15
+
+                                """
+                            }
+                        }
+                    }
+                }
         post { 
         always { 
             echo 'I will always say Hello again!'
