@@ -83,7 +83,7 @@ pipeline{
                                 }                                
                             }
                         }
-                        stage('In Parallel 2') {
+                        stage('STAGE-2') {
                             steps {
                                 script{
                                     echo "In Parallel STAGE - 2"
