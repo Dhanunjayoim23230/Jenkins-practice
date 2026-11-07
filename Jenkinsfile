@@ -4,7 +4,7 @@ pipeline{
         project = 'expense'
         component = 'backend'
         name = 'dhanunjaya reddy'
-        environment = 'QA'
+        DEPLOY_TO = 'QA'
     }
     options { 
         disableConcurrentBuilds() 
@@ -58,7 +58,7 @@ pipeline{
                     }
                 } */
                 // when { branch 'main' }
-                when { environment name: 'DEPLOY_TO', value: '$environment' 
+                when { environment name: 'DEPLOY_TO', value: 'QA' 
                 }
                 steps{
                     sh """
