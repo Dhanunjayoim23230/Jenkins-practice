@@ -48,14 +48,15 @@ pipeline{
                 }
             }
             stage('deploy'){
-                input {
+                /* input {
                     message "Should we continue?"
                     ok "Yes, we should."
                     submitter "Dhanunjaya reddy"
                     parameters {
                         string(name: 'PERSON', defaultValue: 'Mr Dhanunjaya reddy', description: 'Who should I say hello to?')
                     }
-                }
+                } */
+                when { branch 'main' }
                 steps{
                     sh """
                     echo " hello this is deploy"
