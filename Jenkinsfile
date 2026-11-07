@@ -58,7 +58,8 @@ pipeline{
                     }
                 } */
                 // when { branch 'main' }
-                when { environment name: 'DEPLOY_TO', value: '$environment' }.
+                when { environment name: 'DEPLOY_TO', value: '$environment' 
+                }
                 steps{
                     sh """
                     echo " hello this is deploy"
