@@ -82,7 +82,6 @@ pipeline{
                                 sh """
                                     echo " hello this is test"
                                     sleep 15
-
                                 """
                             }
                         }
