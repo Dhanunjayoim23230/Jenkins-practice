@@ -4,6 +4,9 @@ pipeline{
         project = 'expense'
         component = 'backend'
     }
+    options { 
+        disableConcurrentBuilds() 
+    } 
         stages{
             stage('build'){
                 steps{
