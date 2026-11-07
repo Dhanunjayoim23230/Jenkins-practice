@@ -17,7 +17,6 @@ pipeline{
                 steps{
                     sh """
                     echo " hello this is test"
-                    kjhfhkgf
                     """
                 }
             }
