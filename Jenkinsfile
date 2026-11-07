@@ -13,6 +13,7 @@ pipeline{
                     sh """
                     echo "hello this is build"
                     echo " Project name is : $project"
+                    sleep 30
 
                     """
                 }
