@@ -3,6 +3,7 @@ pipeline{
     environment { 
         project = 'expense'
         component = 'backend'
+    }
         stages{
             stage('build'){
                 steps{
