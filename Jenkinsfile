@@ -9,6 +9,11 @@ pipeline{
         disableConcurrentBuilds() 
          timeout(time: 5, unit: 'SECONDS')
     }
+    input {
+        message "Should we continue?"
+        ok "Yes, we should."
+        submitter "Dhanunjaya reddy"
+    }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
