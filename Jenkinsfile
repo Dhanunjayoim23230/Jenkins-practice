@@ -91,6 +91,7 @@ pipeline{
                                 script{
                                     sh """
                                     echo "In Parallel STAGE - 2"
+                                    sleep 15
                                     """
                                 }                                 
                             }
