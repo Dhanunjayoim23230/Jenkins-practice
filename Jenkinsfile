@@ -24,28 +24,34 @@ pipeline{
         stages{
             stage('build'){
                 steps{
-                    sh """
-                    echo "hello this is build"
-                    echo " Project name is : $name"
-                   
-                    echo "Hello ${params.PERSON}"
+                    script{
+                        sh """
+                        echo "hello this is build"
+                        echo " Project name is : $name"
+                    
+                        echo "Hello ${params.PERSON}"
 
-                    echo "Biography: ${params.BIOGRAPHY}"
+                        echo "Biography: ${params.BIOGRAPHY}"
 
-                    echo "Toggle: ${params.TOGGLE}"
+                        echo "Toggle: ${params.TOGGLE}"
 
-                    echo "Choice: ${params.CHOICE}"
+                        echo "Choice: ${params.CHOICE}"
 
-                    echo "Password: ${params.PASSWORD}"
+                        echo "Password: ${params.PASSWORD}"
 
-                    """
+                        """
+                    }
+                    
                 }
             }
             stage('test'){
                 steps{
-                    sh """
-                    echo " hello this is test"
-                    """
+                    script{
+                        sh """
+                        echo " hello this is test"
+                        """
+                    }
+                    
                 }
             }
             stage('deploy'){
@@ -61,11 +67,27 @@ pipeline{
                 when { environment name: 'DEPLOY_TO', value: 'QA' 
                 }
                 steps{
-                    sh """
+                    script{
+                        sh """
                     echo " hello this is deploy"
                     """
+                    }                   
                 }
             }
+            stage('Parallel stages') {
+                    parallel {
+                        stage('STAGE-1') {
+                            steps {
+                                echo "In Parallel STAGE - 1"
+                            }
+                        }
+                        stage('In Parallel 2') {
+                            steps {
+                                echo "In Parallel STAGE - 2"
+                            }
+                        }
+                    }
+                }
         }
         post { 
         always { 
