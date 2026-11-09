@@ -4,7 +4,7 @@ pipeline{
         project = 'expense'
         component = 'backend'
         name = 'dhanunjaya reddy'
-        DEPLOY_TO = 'qa'
+        DEPLOY_TO = 'prod'
     }
     options { 
         disableConcurrentBuilds() 
